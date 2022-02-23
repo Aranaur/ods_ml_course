@@ -1,0 +1,162 @@
+---
+title: "Введение в Python"
+author: "Игорь Мирошниченко"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, collapse = TRUE)
+```
+
+# 0.
+* [Материалы лекции](github.com/ermakovpetr/open-ml-course/blob/main/003%20Введение%20в%20python/python%20base.ipynb)
+* [Видео лекции](https://www.youtube.com/watch?v=rWxD7vZdldY)
+
+# 1. int and float - числа и переменные
+
+```{python}
+int_var_1 = 1000000
+int_var_2 = 1_000_000
+
+int_var_1
+
+int_var_2
+
+type(int_var_1)
+
+type(int_var_2)
+
+float_var_1 = 123.456
+float_var_2 = 1.0
+float_var_3 = .123456
+
+type(float_var_1)
+type(float_var_2)
+type(float_var_3)
+```
+
+# 2. Калькулятор
+
+```{python}
+123 + 456
+
+654 - 321
+
+5 * 9
+
+999 / 9 # float!
+
+12 % 10 # остаток от деления
+
+12 // 10 # целочисленное деление
+
+2 ** 10 # степень
+```
+
+# 3. Синтаксический сахар
+
+```{python}
+a = 10
+b = 20
+c = a + b
+c
+```
+
+```{python}
+a = 10
+b = 20
+a = a + b
+a
+```
+
+```{python}
+a = 10
+b = 20
+a += b # синтаксический сахар
+a
+a /= b 
+a
+```
+
+# 4. Строки
+Разные форматы записи строк
+```{python}
+str_var_1 = 'Hello'
+str_var_1
+
+str_var_2 = "Hello"
+str_var_2
+
+str_var_3 = '''Hello'''
+str_var_3
+
+str_var_4 = """Hello"""
+str_var_4
+
+str_var_5 = 'Hel\'lo' # экранирование символа
+str_var_5
+
+str_var_6 = "Hel'lo" # комбинирование
+```
+
+Проверим тип переменной
+```{python}
+type(str_var_1)
+```
+
+Длинный вариант записи строки
+```{python}
+long_str_var_1 = '''You
+shall
+not
+pass!'''
+
+print(long_str_var_1) # если в RStudio - надо запускать через print()
+```
+
+Еще варианты длинных запиcей:
+```{python}
+long_str_var_2 = """Ash nazg durbatulûk,\n\tash nazg gimbatul,\nAsh nazg thrakatulûk\n\tagh burzum-ishi krimpatul."""
+
+print(long_str_var_2)
+```
+
+Скрейка строк (конкатенация):
+```{python}
+"One" + 'Ring'
+
+print("Lord" + " " + "of" + " " + "the" + " " + "Rings")
+```
+
+Умножение строк :
+```{python}
+"Hobbit " * 4
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

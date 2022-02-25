@@ -125,7 +125,7 @@ long_str_var_2 = """Ash nazg durbatulûk,\n\tash nazg gimbatul,\nAsh nazg thraka
 print(long_str_var_2)
 ```
 
-Скрейка строк (конкатенация):
+Склейка строк (конкатенация):
 ```{python}
 "One" + 'Ring'
 
@@ -137,9 +137,42 @@ print("Lord" + " " + "of" + " " + "the" + " " + "Rings")
 "Hobbit " * 4
 ```
 
+Узнать длину строки:
+```{python}
+len(long_str_var_2)
+```
 
 
+Типизация:
+```{python}
+int("2") + 3
 
+"2" + str(3)
+```
+
+# 5. Списки.
+По сути как вектор, но может иметь разные типы элементы
+```{python}
+[1, 5, 10]
+
+my_list = [123, -321, "Hello!", [], [111, "text"]]
+my_list
+type(my_list)
+```
+
+Индексация списков (начинается с 0):
+```{python}
+my_list[0]
+
+my_list[4]
+```
+
+Смена элементов списка (но нельзя добавлять):
+```{python}
+my_list[3] = "World!"
+
+my_list
+```
 
 
 

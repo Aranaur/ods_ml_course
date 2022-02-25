@@ -12,7 +12,7 @@
 
 <meta name="author" content="Игорь Мирошниченко" />
 
-<meta name="date" content="2022-02-23" />
+<meta name="date" content="2022-02-25" />
 
 <title>Введение в Python</title>
 
@@ -131,7 +131,7 @@ a.sourceLine {
 <div class="inner">
 <h1 class="title toc-ignore">Введение в Python</h1>
 <h3 class="author">Игорь Мирошниченко</h3>
-<h3 class="date">2022-02-23</h3>
+<h3 class="date">2022-02-25</h3>
 </div>
 </header>
 
@@ -250,7 +250,7 @@ a.sourceLine {
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">##  ash nazg gimbatul,</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">## Ash nazg thrakatulûk</span></span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">##  agh burzum-ishi krimpatul.</span></span></code></pre></div>
-<p>Скрейка строк (конкатенация):</p>
+<p>Склейка строк (конкатенация):</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;One&quot;</span> <span class="op">+</span> <span class="st">&#39;Ring&#39;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">## &#39;OneRing&#39;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Lord&quot;</span> <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="st">&quot;of&quot;</span> <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="st">&quot;the&quot;</span> <span class="op">+</span> <span class="st">&quot; &quot;</span> <span class="op">+</span> <span class="st">&quot;Rings&quot;</span>)</span>
@@ -258,6 +258,35 @@ a.sourceLine {
 <p>Умножение строк :</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;Hobbit &quot;</span> <span class="op">*</span> <span class="dv">4</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">## &#39;Hobbit Hobbit Hobbit Hobbit &#39;</span></span></code></pre></div>
+<p>Узнать длину строки:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(long_str_var_2)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">## 89</span></span></code></pre></div>
+<p>Типизация:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="st">&quot;2&quot;</span>) <span class="op">+</span> <span class="dv">3</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">## 5</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;2&quot;</span> <span class="op">+</span> <span class="bu">str</span>(<span class="dv">3</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">## &#39;23&#39;</span></span></code></pre></div>
+</div>
+<div id="списки." class="section level1">
+<h1>5. Списки.</h1>
+<p>По сути как вектор, но может иметь разные типы элементы</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">## [1, 5, 10]</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">123</span>, <span class="op">-</span><span class="dv">321</span>, <span class="st">&quot;Hello!&quot;</span>, [], [<span class="dv">111</span>, <span class="st">&quot;text&quot;</span>]]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>my_list</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">## [123, -321, &#39;Hello!&#39;, [], [111, &#39;text&#39;]]</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(my_list)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">## &lt;class &#39;list&#39;&gt;</span></span></code></pre></div>
+<p>Индексация списков (начинается с 0):</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">0</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">## 123</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">4</span>]</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">## [111, &#39;text&#39;]</span></span></code></pre></div>
+<p>Смена элементов списка (но нельзя добавлять):</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">3</span>] <span class="op">=</span> <span class="st">&quot;World!&quot;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>my_list</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">## [123, -321, &#39;Hello!&#39;, &#39;World!&#39;, [111, &#39;text&#39;]]</span></span></code></pre></div>
 </div>
     </section>
   </div>

@@ -12,7 +12,7 @@
 
 <meta name="author" content="Игорь Мирошниченко" />
 
-<meta name="date" content="2022-02-25" />
+<meta name="date" content="2022-02-26" />
 
 <title>Введение в Python</title>
 
@@ -131,7 +131,7 @@ a.sourceLine {
 <div class="inner">
 <h1 class="title toc-ignore">Введение в Python</h1>
 <h3 class="author">Игорь Мирошниченко</h3>
-<h3 class="date">2022-02-25</h3>
+<h3 class="date">2022-02-26</h3>
 </div>
 </header>
 
@@ -272,21 +272,170 @@ a.sourceLine {
 <p>По сути как вектор, но может иметь разные типы элементы</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">## [1, 5, 10]</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="dv">123</span>, <span class="op">-</span><span class="dv">321</span>, <span class="st">&quot;Hello!&quot;</span>, [], [<span class="dv">111</span>, <span class="st">&quot;text&quot;</span>]]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="st">&#39;Zero&#39;</span>, <span class="dv">1</span>, <span class="st">&quot;2&quot;</span>, [], [<span class="dv">111</span>, <span class="st">&quot;text&quot;</span>]]</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>my_list</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">## [123, -321, &#39;Hello!&#39;, [], [111, &#39;text&#39;]]</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">## [&#39;Zero&#39;, 1, &#39;2&#39;, [], [111, &#39;text&#39;]]</span></span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(my_list)</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">## &lt;class &#39;list&#39;&gt;</span></span></code></pre></div>
 <p>Индексация списков (начинается с 0):</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">0</span>]</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">## 123</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">## &#39;Zero&#39;</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">4</span>]</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">## [111, &#39;text&#39;]</span></span></code></pre></div>
 <p>Смена элементов списка (но нельзя добавлять):</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">3</span>] <span class="op">=</span> <span class="st">&quot;World!&quot;</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>my_list</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">## [123, -321, &#39;Hello!&#39;, &#39;World!&#39;, [111, &#39;text&#39;]]</span></span></code></pre></div>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">## [&#39;Zero&#39;, 1, &#39;2&#39;, &#39;World!&#39;, [111, &#39;text&#39;]]</span></span></code></pre></div>
+<p>Срез по списку:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># со второго и до конца</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">1</span>:]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># правая граница не включается!</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">## [1, &#39;2&#39;, &#39;World!&#39;, [111, &#39;text&#39;]]</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>my_list[:<span class="dv">3</span>]</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># с первого (если считать с 0) до второго (правая граница не включается)</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">## [&#39;Zero&#39;, 1, &#39;2&#39;]</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>my_list[<span class="dv">1</span>:<span class="dv">3</span>]</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co"># срез с шагом</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co">## [1, &#39;2&#39;]</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>my_list_int <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>my_list_int[<span class="dv">3</span>:<span class="dv">9</span>:<span class="dv">2</span>] <span class="co"># 2 - указывает шаг.</span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co">## [4, 6, 8]</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>my_list_int[::<span class="dv">3</span>] <span class="co"># от начала до конца с шагом 3</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="co">## [1, 4, 7, 10]</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>my_list_int[::<span class="op">-</span><span class="dv">1</span>] <span class="co"># с конца в начало - перевернуть список</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="co">## [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>my_list_int[<span class="dv">2</span>:<span class="op">-</span><span class="dv">2</span>:<span class="dv">2</span>]</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 0  1  2     .     .     -2 -1</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 1, 2, 3, 4, 5, 6, 7, 8, 9, 10</span></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="co">## [3, 5, 7]</span></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>my_list_int[<span class="op">-</span><span class="dv">7</span>:<span class="op">-</span><span class="dv">2</span>]</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="co">## [4, 5, 6, 7, 8]</span></span></code></pre></div>
+<p>Операции над списками</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Склейка</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>] <span class="op">+</span> [<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Повторение</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">## [1, 2, 3, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;]</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>] <span class="op">*</span> <span class="dv">3</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Сортировка по возрастанию</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">## [1, 2, 3, 1, 2, 3, 1, 2, 3]</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>numbers_list <span class="op">=</span> [<span class="dv">4</span>, <span class="dv">8</span>, <span class="op">-</span><span class="dv">5</span>, <span class="op">-</span><span class="dv">3</span>, <span class="dv">1</span>]</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(numbers_list)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="co"># По спаданию</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co">## [-5, -3, 1, 4, 8]</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(numbers_list, reverse <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Можно и с текстом</span></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a><span class="co">## [8, 4, 1, -3, -5]</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>gendalf_list <span class="op">=</span> [<span class="st">&quot;You&quot;</span>, <span class="st">&quot;shall&quot;</span>, <span class="st">&quot;not&quot;</span>, <span class="st">&quot;pass!&quot;</span>]</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(gendalf_list)</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Со строками работает необычно (дробит на отдельные буквы)</span></span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="co">## [&#39;You&#39;, &#39;not&#39;, &#39;pass!&#39;, &#39;shall&#39;]</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(long_str_var_1)</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a><span class="co">## You</span></span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a><span class="co">## shall</span></span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a><span class="co">## not</span></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a><span class="co">## pass!</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(long_str_var_1)</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a><span class="co">## [&#39;\n&#39;, &#39;\n&#39;, &#39;\n&#39;, &#39;!&#39;, &#39;Y&#39;, &#39;a&#39;, &#39;a&#39;, &#39;h&#39;, &#39;l&#39;, &#39;l&#39;, &#39;n&#39;, &#39;o&#39;, &#39;o&#39;, &#39;p&#39;, &#39;s&#39;, &#39;s&#39;, &#39;s&#39;, &#39;t&#39;, &#39;u&#39;]</span></span></code></pre></div>
+</div>
+<div id="булевые-значения" class="section level1">
+<h1>6. Булевые значения</h1>
+<p>Есть две константы: True (да/истина), False (нет/лож)</p>
+<p>Сравнение</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">5</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">## False</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">&lt;=</span> <span class="dv">10</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co">## True</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span> <span class="op">==</span> <span class="dv">5</span><span class="op">**</span><span class="dv">2</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co">## True</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span> <span class="op">!=</span> <span class="dv">2</span></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co">## True</span></span></code></pre></div>
+<p>Использование операторов <code>and</code> и <code>or</code> для булевых значений Таблица для <code>and</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>var1</th>
+<th>var2</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<td>True</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="odd">
+<td>False</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="even">
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p>Таблица для <code>or</code>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>var1</th>
+<th>var2</th>
+<th>Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr class="odd">
+<td>False</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="even">
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+<p><code>not</code> меняет на противоположное: был <code>True</code> стал <code>False</code> и наоборот.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>temp_var <span class="op">=</span> <span class="fl">36.6</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>temp_var <span class="op">&gt;=</span> <span class="dv">36</span> <span class="kw">and</span> temp_var <span class="op">&lt;=</span> <span class="dv">37</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">## True</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="dv">36</span> <span class="op">&lt;=</span> temp_var <span class="op">&lt;=</span> <span class="dv">37</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">## True</span></span></code></pre></div>
+</div>
+<div id="множества-set" class="section level1">
+<h1>7. Множества (set)</h1>
+<p>В множестве хранятся только уникальные значения. Но порядок значений работает необычно.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>my_set <span class="op">=</span> <span class="bu">set</span>([<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10</span>])</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>my_set</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">## {1000, 10, 100}</span></span></code></pre></div>
 </div>
     </section>
   </div>

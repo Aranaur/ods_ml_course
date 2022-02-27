@@ -368,3 +368,91 @@ def sum_a_b(a, b):
 sum_a_b(2, 3)
 ```
 
+```{python}
+# a*x**2+b*x+c = 0
+def f(a, b, c):
+    d = b**2 -4*a*c
+    if d > 0:
+        print('два разных корня')
+        x1 = (-b + d**.5) / (2*a)
+        x2 = (-b - d**.5) / (2*a)
+        print('x1 =', x1)
+        print('x2 =', x2)
+    elif d == 0:
+        print('два равных корня')
+        x = (-b) / (2*a)
+        print('x1 = x2 =', x)
+    else:
+        print('вещественных корней нет')
+        
+f(2, 4, 2)
+```
+
+# 12. Дополнительные библиотеки
+```{python}
+import math # логарифмы, корни и прочее
+
+math.sqrt(25)
+```
+
+```{python}
+from collections import Counter # подсчёт количества
+
+Counter([1, 3, 4, 5, 2, 1, 3, 4, 4])
+```
+
+# 13. Файлы: чтение и запись
+```{python}
+file = open("text.txt", "r") # по дефолту происходит чтение, "r" - не обязательно
+# r - чтение
+# w - запись
+# a - дописать
+# x - запись, но если файл есть - упасть
+
+file # просто покажет информацию о файле
+
+all_data = file.read() # читаем файл
+print(all_data) # показывает что внутри
+
+file.close() # не забываем файл закрыть
+```
+
+```{python}
+file = open("text.txt")
+all_data = file.readlines() # чтение в список, каждая строка в отдельный элемент
+print(all_data)
+file.close()
+```
+
+```{python}
+new_file = open("new_file.txt", "w") # "w" создаст новый файл
+
+new_file.write("You shall\nnot pass!")
+
+new_file.close()
+```
+
+```{python}
+text = [
+    'Первая строка\n',
+    'Вторая строка\n',
+    'Ну и третья\n'
+]
+
+new_file = open("new_file2.txt", "w")
+new_file.writelines(text)
+new_file.close()
+```
+
+Для вывода текста в консоль на Jupyter notebook можно использовать:
+```{python}
+#!cat new_file.txt - для мак и линукс
+
+# в windows аналог cat - команда type
+#!type new_file.txt
+```
+
+
+
+
+

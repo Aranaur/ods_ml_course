@@ -448,17 +448,17 @@ a.sourceLine {
 <span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span> <span class="kw">in</span> my_set</span>
 <span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co">## True</span></span>
 <span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--- </span><span class="sc">%s</span><span class="st"> seconds ---&quot;</span> <span class="op">%</span> (time.time() <span class="op">-</span> start_time))</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">## --- 0.010970115661621094 seconds ---</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">## --- 0.009972572326660156 seconds ---</span></span>
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="dv">11</span> <span class="kw">in</span> my_set</span>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co">## False</span></span>
 <span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--- </span><span class="sc">%s</span><span class="st"> seconds ---&quot;</span> <span class="op">%</span> (time.time() <span class="op">-</span> start_time))</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co">## --- 0.00897669792175293 seconds ---</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co">## --- 0.011967897415161133 seconds ---</span></span>
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>start_time <span class="op">=</span> time.time()</span>
 <span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="dv">1000</span> <span class="kw">in</span> [<span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>, <span class="dv">10</span>]</span>
 <span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="co">## True</span></span>
 <span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--- </span><span class="sc">%s</span><span class="st"> seconds ---&quot;</span> <span class="op">%</span> (time.time() <span class="op">-</span> start_time))</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co">## --- 0.007977962493896484 seconds ---</span></span></code></pre></div>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="co">## --- 0.00897669792175293 seconds ---</span></span></code></pre></div>
 </div>
 <div id="словарь-dict" class="section level1">
 <h1>8. Словарь (dict)</h1>
@@ -570,6 +570,89 @@ a.sourceLine {
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>sum_a_b(<span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">## 5</span></span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a*x**2+b*x+c = 0</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> f(a, b, c):</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> b<span class="op">**</span><span class="dv">2</span> <span class="op">-</span><span class="dv">4</span><span class="op">*</span>a<span class="op">*</span>c</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> d <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;два разных корня&#39;</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>        x1 <span class="op">=</span> (<span class="op">-</span>b <span class="op">+</span> d<span class="op">**</span><span class="fl">.5</span>) <span class="op">/</span> (<span class="dv">2</span><span class="op">*</span>a)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>        x2 <span class="op">=</span> (<span class="op">-</span>b <span class="op">-</span> d<span class="op">**</span><span class="fl">.5</span>) <span class="op">/</span> (<span class="dv">2</span><span class="op">*</span>a)</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;x1 =&#39;</span>, x1)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;x2 =&#39;</span>, x2)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> d <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;два равных корня&#39;</span>)</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>        x <span class="op">=</span> (<span class="op">-</span>b) <span class="op">/</span> (<span class="dv">2</span><span class="op">*</span>a)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;x1 = x2 =&#39;</span>, x)</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&#39;вещественных корней нет&#39;</span>)</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>f(<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>)</span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co">## два равных корня</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="co">## x1 = x2 = -1.0</span></span></code></pre></div>
+</div>
+<div id="дополнительные-библиотеки" class="section level1">
+<h1>12. Дополнительные библиотеки</h1>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math <span class="co"># логарифмы, корни и прочее</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>math.sqrt(<span class="dv">25</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co">## 5.0</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> collections <span class="im">import</span> Counter <span class="co"># подсчёт количества</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>Counter([<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>])</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co">## Counter({4: 3, 1: 2, 3: 2, 5: 1, 2: 1})</span></span></code></pre></div>
+</div>
+<div id="файлы-чтение-и-запись" class="section level1">
+<h1>13. Файлы: чтение и запись</h1>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;text.txt&quot;</span>, <span class="st">&quot;r&quot;</span>) <span class="co"># по дефолту происходит чтение, &quot;r&quot; - не обязательно</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># r - чтение</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># w - запись</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># a - дописать</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co"># x - запись, но если файл есть - упасть</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="co"># просто покажет информацию о файле</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co">## &lt;_io.TextIOWrapper name=&#39;text.txt&#39; mode=&#39;r&#39; encoding=&#39;cp1251&#39;&gt;</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>all_data <span class="op">=</span> <span class="bu">file</span>.read() <span class="co"># читаем файл</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(all_data) <span class="co"># показывает что внутри</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">## R version 4.1.1 (2021-08-10) -- &quot;Kick Things&quot;</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">## Copyright (C) 2021 The R Foundation for Statistical Computing</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">## Platform: x86_64-w64-mingw32/x64 (64-bit)</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">## </span></span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="co">## R is free software and comes with ABSOLUTELY NO WARRANTY.</span></span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="co">## You are welcome to redistribute it under certain conditions.</span></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co">## Type &#39;license()&#39; or &#39;licence()&#39; for distribution details.</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="co">## </span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="co">## R is a collaborative project with many contributors.</span></span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="co">## Type &#39;contributors()&#39; for more information and</span></span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="co">## &#39;citation()&#39; on how to cite R or R packages in publications.</span></span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="co">## </span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a><span class="co">## Type &#39;demo()&#39; for some demos, &#39;help()&#39; for on-line help, or</span></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a><span class="co">## &#39;help.start()&#39; for an HTML browser interface to help.</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a><span class="co">## Type &#39;q()&#39; to quit R.</span></span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close() <span class="co"># не забываем файл закрыть</span></span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;text.txt&quot;</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>all_data <span class="op">=</span> <span class="bu">file</span>.readlines() <span class="co"># чтение в список, каждая строка в отдельный элемент</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(all_data)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">## [&#39;R version 4.1.1 (2021-08-10) -- &quot;Kick Things&quot;\n&#39;, &#39;Copyright (C) 2021 The R Foundation for Statistical Computing\n&#39;, &#39;Platform: x86_64-w64-mingw32/x64 (64-bit)\n&#39;, &#39;\n&#39;, &#39;R is free software and comes with ABSOLUTELY NO WARRANTY.\n&#39;, &#39;You are welcome to redistribute it under certain conditions.\n&#39;, &quot;Type &#39;license()&#39; or &#39;licence()&#39; for distribution details.\n&quot;, &#39;\n&#39;, &#39;R is a collaborative project with many contributors.\n&#39;, &quot;Type &#39;contributors()&#39; for more information and\n&quot;, &quot;&#39;citation()&#39; on how to cite R or R packages in publications.\n&quot;, &#39;\n&#39;, &quot;Type &#39;demo()&#39; for some demos, &#39;help()&#39; for on-line help, or\n&quot;, &quot;&#39;help.start()&#39; for an HTML browser interface to help.\n&quot;, &quot;Type &#39;q()&#39; to quit R.&quot;]</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>new_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;new_file.txt&quot;</span>, <span class="st">&quot;w&quot;</span>) <span class="co"># &quot;w&quot; создаст новый файл</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>new_file.write(<span class="st">&quot;You shall</span><span class="ch">\n</span><span class="st">not pass!&quot;</span>)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="co">## 19</span></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>new_file.close()</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> [</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Первая строка</span><span class="ch">\n</span><span class="st">&#39;</span>,</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Вторая строка</span><span class="ch">\n</span><span class="st">&#39;</span>,</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;Ну и третья</span><span class="ch">\n</span><span class="st">&#39;</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>new_file <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;new_file2.txt&quot;</span>, <span class="st">&quot;w&quot;</span>)</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>new_file.writelines(text)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>new_file.close()</span></code></pre></div>
+<p>Для вывода текста в консоль на Jupyter notebook можно использовать:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!cat new_file.txt - для мак и линукс</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="co"># в windows аналог cat - команда type</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co">#!type new_file.txt</span></span></code></pre></div>
 </div>
     </section>
   </div>

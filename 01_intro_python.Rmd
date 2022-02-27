@@ -271,13 +271,100 @@ temp_var >= 36 and temp_var <= 37
 ```{python}
 my_set = set([10, 100, 1000, 10])
 my_set
+
+# а можно сразу писать в фигурных скобках:
+type({10, 100, 1000, 10})
 ```
 
+Множества нужны в случаях, когда порядок и повторения не столь важны, но ряд операций будет работать быстрее, особенно на больших объемах данных.
 
+```{python}
+# Проверяем скорость
+import time
 
+start_time = time.time()
+10 in my_set
+print("--- %s seconds ---" % (time.time() - start_time))
 
+start_time = time.time()
+11 in my_set
+print("--- %s seconds ---" % (time.time() - start_time))
 
+start_time = time.time()
+1000 in [10, 100, 1000, 10]
+print("--- %s seconds ---" % (time.time() - start_time))
+```
 
+# 8. Словарь (dict)
+Работает в формате: `'ключ': 'значение'`
+```{python}
+tolkien_book_dict = {
+  'The Hobbit or There and Back Again': '1937',
+  'The Fellowship of the Ring': '1954',
+  'The Two Towers': '1954',
+  'The Return of the King': '1955'
+  }
+  
+tolkien_book_dict['The Two Towers']
+# индексация через .get
+tolkien_book_dict.get('The Two Towers')
 
+# добавление нового ключа
+tolkien_book_dict['The Silmarillion'] = '1977'
+tolkien_book_dict
+```
 
+# 9. Уславный оператор `if`
+```{python}
+check_temp = 36.6
+
+# не забываем о двоеточии
+if check_temp < 36.6:
+    print('low temp')
+elif check_temp == 36.6:
+    print('norm temp')
+else:
+    print('hight temp')
+```
+
+# 10. Цикл `while`
+```{python}
+step = 1
+while step <= 5:
+    print(step)
+    print('A' * step)
+    step += 1
+```
+
+# 11. Цикл `for`
+```{python}
+gendalf_str = ['You', 'shall', 'not', 'pass']
+gendalf_str
+
+for i in gendalf_str:
+    print(i)
+    
+for i in gendalf_str:
+    print(i[::-1])
+    
+for i in [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:
+    print('Print result:', i+1)
+
+# генерирование последовательности    
+list(range(0, 10))
+
+list(range(0, 10, 2))
+
+for i in range(0, 10):
+    print('Print result:', i+1)
+```
+
+# 11. Функции `def`
+```{python}
+def sum_a_b(a, b):
+    result = a + b
+    return result
+  
+sum_a_b(2, 3)
+```
 
